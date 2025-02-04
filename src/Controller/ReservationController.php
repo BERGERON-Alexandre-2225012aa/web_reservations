@@ -33,7 +33,7 @@ class ReservationController extends AbstractController
             $this->addFlash('success', 'Réservation ajoutée avec succès !');
 
             // Rediriger vers une autre page (par exemple la liste des réservations)
-            return $this->redirectToRoute('reservation_list');
+            return $this->redirectToRoute('home');
         }
 
         // Rendre la vue avec le formulaire
