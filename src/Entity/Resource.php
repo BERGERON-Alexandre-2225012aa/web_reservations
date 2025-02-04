@@ -12,7 +12,7 @@ class Resource
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: 'integer')]
-    private ?int $id = null;
+    private ?int $resource_id = null;
 
     #[ORM\Column(type: 'string', length: 50)]
     private string $type;
@@ -20,9 +20,9 @@ class Resource
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private ?string $description = null;
 
-    public function getId(): ?int
+    public function getResourceId(): ?int
     {
-        return $this->id;
+        return $this->resource_id;
     }
 
     public function getType(): string

@@ -2,8 +2,8 @@
 
 namespace App\Controller;
 
-use App\Entity\Reservations;
-use App\Form\ReservationsType;
+use App\Entity\Reservation;
+use App\Form\ReservationType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,11 +15,11 @@ class ReservationController extends AbstractController
     #[Route('/reservation/new', name: 'reservation_new')]
     public function new(Request $request, EntityManagerInterface $entityManager): Response
     {
-        // Créer une nouvelle instance de l'entité Reservations
-        $reservation = new Reservations();
+        // Créer une nouvelle instance de l'entité Reservation
+        $reservation = new Reservation();
 
-        // Créer le formulaire basé sur ReservationsType
-        $form = $this->createForm(ReservationsType::class, $reservation);
+        // Créer le formulaire basé sur ReservationType
+        $form = $this->createForm(ReservationType::class, $reservation);
 
         // Gérer la soumission du formulaire
         $form->handleRequest($request);
@@ -37,7 +37,7 @@ class ReservationController extends AbstractController
         }
 
         // Rendre la vue avec le formulaire
-        return $this->render('reservations/new.html.twig', [
+        return $this->render('reservation/new.html.twig', [
             'form' => $form->createView(),
         ]);
     }

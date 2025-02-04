@@ -32,8 +32,8 @@ class UserController extends AbstractController
             // Ajouter un message flash pour indiquer le succès
             $this->addFlash('success', 'User ajouté avec succès !');
 
-            // Rediriger vers une autre page (par exemple la liste des réservations)
-            return $this->redirectToRoute('user_list');
+            // Rediriger vers une autre page
+            return $this->redirectToRoute('home');
         }
 
         // Rendre la vue avec le formulaire
