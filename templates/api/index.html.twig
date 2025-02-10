@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Utilisateurs{% endblock %}
+
+{% block body %}
+    <h1>Liste des utilisateurs</h1>
+    <ul>
+        {% for utilisateur in utilisateurs.member %}
+            <li>{{ utilisateur.email }}</li>  {# Adapte selon la structure de la réponse de ton API #}
+        {% endfor %}
+    </ul>
+{% endblock %}
