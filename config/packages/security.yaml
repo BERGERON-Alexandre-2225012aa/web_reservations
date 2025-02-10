@@ -1,13 +1,13 @@
 security:
-    # https://symfony.com/doc/current/security.html#registering-the-user-hashing-passwords
     password_hashers:
         Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: 'auto'
-    # https://symfony.com/doc/current/security.html#loading-the-user-the-user-provider
+
     providers:
         app_user_provider:
             entity:
                 class: App\Entity\User
                 property: email
+
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
@@ -16,19 +16,16 @@ security:
         main:
             lazy: true
             provider: app_user_provider
-
-            # Authentification par formulaire
             form_login:
-                login_path: login    # Route vers la page de login
-                check_path: login    # Route où le formulaire est envoyé (même que login_path)
-                default_target_path: /home  # Page vers laquelle l'utilisateur est redirigé après une connexion réussie
-                # Rediriger l'utilisateur après une connexion réussie
+                login_path: app_login
+                check_path: app_login
+                default_target_path: home  # Page vers laquelle l'utilisateur est redirigé après une connexion réussie
                 always_use_default_target_path: true
-            entry_point: App\Security\UserAuthenticator
+                username_parameter: email  # Utilise "email" au lieu de "_username"
+                password_parameter: password
             logout:
-                path: logout    # Route de déconnexion
-                target: /login  # Page vers laquelle l'utilisateur est redirigé après la déconnexion
-            custom_authenticator: App\Security\UserAuthenticator
+                path: app_logout    # Route de déconnexion
+                target: app_login  # Page vers laquelle l'utilisateur est redirigé après la déconnexion
 
             remember_me:
                 secret: '%kernel.secret%'
