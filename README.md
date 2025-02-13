@@ -16,9 +16,10 @@ git clone https://github.com/BERGERON-Alexandre-2225012aa/web_reservations.git
 
 Étape 2 : Installation des dépendances  
 
-Une fois le dépôt cloné, lancer un terminal à l'intérieur du dossier local et exécuter la commande suivante
+Une fois le dépôt cloné, lancer un terminal à l'intérieur du dossier local et exécuter les commandes suivantes
 ```bash
 composer install
+npm install
 ```
 
 Étape 3 : Création d'un user mysql  
