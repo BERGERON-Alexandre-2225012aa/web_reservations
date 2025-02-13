@@ -4,12 +4,29 @@
         <meta charset="UTF-8">
         <title>Nom du site - {% block title %}{% endblock %}</title>
         <link rel="icon" href="">
+
+        <link rel="stylesheet" href="assets/styles/app.css">
+
         {% block stylesheets %}
         {% endblock %}
 
-        {% block javascripts %}
-        {% endblock %}
+        {% block javascripts %}{% endblock %}
     </head>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Accueil</a></li>
+                {% if app.user %}
+                    <li>Bonjour, {{ app.user.prenom }}</li>
+                    <li><a href="{{ path('app_logout') }}">Se déconnecter</a></li>
+                {% else %}
+                    <li><a href="{{ path('app_register') }}">S'inscrire</a></li>
+                    <li><a href="{{ path('app_login') }}">Se connecter</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+
     <body>
         {% block body %}{% endblock %}
     </body>

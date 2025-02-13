@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Style global pour le header */
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Conteneur de la navigation */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Liens de navigation */
+nav a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 16px;
+    transition: background-color 0.3s ease;
+}
+
+/* Effet au survol des liens */
+nav a:hover {
+    background-color: #555;
+    border-radius: 4px;
+}
+
+/* Style spécifique pour le texte de bienvenue */
+nav li {
+    display: inline-block;
+}
+
+nav li:first-child {
+    flex-grow: 1;
+    text-align: left;
+    padding-left: 20px;
+}
+
+/* Pour l'affichage du nom de l'utilisateur */
+nav li:nth-child(2) {
+    font-weight: bold;
+}
+
+/* Style pour la liste des éléments si l'utilisateur est connecté ou non */
+nav li a {
+    font-weight: normal;
+}
+

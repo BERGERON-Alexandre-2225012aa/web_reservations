@@ -1,0 +1,75 @@
+/* assets/styles/inscription.css */
+
+/* Style général de la page */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fc;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Conteneur principal du formulaire */
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 2.5rem;
+    margin-top: 50px;
+}
+
+/* Style du formulaire */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+/* Espacement entre les champs du formulaire */
+.form-row {
+    margin-bottom: 20px;
+}
+
+/* Style des champs de texte */
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+}
+
+/* Style du bouton d'envoi */
+button[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Style pour les messages d'erreur */
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* Ajout de l'espacement autour du formulaire */
+.container {
+    padding: 40px;
+    background-color: #eef1f6;
+}
